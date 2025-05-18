@@ -1,0 +1,164 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+<body>
+    <!-- top nav -->
+     <nav class="top_nav">
+        <!-- logo and slogan -->
+         <div class="nav_brand">
+            <img src="https://png.pngtree.com/png-clipart/20211017/original/pngtree-school-logo-png-image_6851480.png" alt="logo" class="nav_logo">
+            <span id="school_name"></span>
+            <!-- <span id="school_name"> Sontoshpur High School</span>  --> 
+             <!-- // when data comes from js then this span will be blank -->
+         </div>
+         <!-- nav links  -->
+          <div class="nav_links">
+            <a href="#" class="nav_link active">Log In</a>
+          </div>
+     </nav>
+     <!-- end of nav bar -->
+
+     <!-- main body -->
+      <div class="container">
+
+        <!-- left side bar -->
+         <div class="sidebar"> 
+            <!-- school header -->
+             <div class="school_header">
+                <img src="https://png.pngtree.com/png-clipart/20211017/original/pngtree-school-logo-png-image_6851480.png" alt="logl" class="school_logo">
+                <h2 id="sideSchool_name"></h2>
+                <!-- <h2 id="sideSchool_name">Welcome to our School</h2> -->
+                <!-- // when data comes from js then this h2 will be blank --> 
+                <p id="side_slogan"></p>
+                <!-- <p id="side_slogan">Lorem ipsum dolor sit amet.</p> -->
+                 <!-- // when data comes from js then this h2 will be blank -->
+             </div>
+             <!-- side bar nav links -->
+              <div class="nav_menu">
+                <button onclick="showSection('dashboard')">Dashboard</button>
+                <button onclick="showSection('students')">Students</button>
+                <button onclick="showSection('notices')">Notices</button>
+                <button onclick="showSection('settings')">Settings</button>
+              </div>
+              <!-- version info -->
+               <div class="version_info">
+                version 2.2.0
+               </div>
+              
+         </div>
+         <!-- end of left side bar -->
+
+         <!-- main content -->
+          <div class="main_content">
+            <!-- dashboard section -->
+             <div id="dashboardSection">
+                <div class="dashboard_card">
+                    <h3>Total Students</h3>
+                    <h1 class="total_students">0</h1>
+                </div>
+                <div class="notice_board">
+                    <h3>Latest Notice</h3>
+                    <div class="dashboard_notice"></div>
+                    <!-- all notices will be rendered here -->
+                </div>
+             </div><br>
+             <!-- students section -->
+              <div id="studentsSection"  class="hiden">
+                <div class="dashboard_card">
+                    <h2>Student Management</h2>
+                    <div class="form_group">
+                        <button onclick="showSection('admit')" class="action_btn">Admit New Student</button>
+                    </div>
+                    <table class="student_table">
+                        <thead>
+                           <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Class</th>
+                            <th>Roll</th>
+                            <th>Action</th>
+                           </tr>
+                        </thead>
+                    </table>
+                </div>
+              </div>
+              <!-- end of student section -->
+
+              <!-- admit student section -->
+               <div id="admitSection"  class="hiden">
+                <div class="dashboard_card">
+                    <h2>Admit New Student</h2>
+                    <form action="" id="admitForm" class="form">
+                        <div class="form_group">
+                            <label for="studentName"></label>
+                            <input type="text" id="studentName" required>
+                        </div>
+                        <button type="submit" class="btn">Admit Student</button>
+                    </form>
+                </div>
+               </div>
+               <!-- end of admit student section -->
+
+               <!-- notices section -->
+                <div  id="noticesSection"  class="hiden">
+                    <div class="dashboard_card">
+                        <h2>Create New Notice...</h2>
+                        <form action="" id="noticeForm" class="form">
+                            <div class="form_group">
+                                <label for="noticeTitle">Notice Title</label>
+                                <input type="text" id="noticeTitle" required>
+                            </div>
+                            <div class="form_group">
+                                <!-- <label for="noticeContent">Notice Content</label> -->
+                                <!-- <input type="text" id="noticeContent" required> -->
+                                <textarea name="textarea" id="noticeContent"></textarea>
+                            </div>
+                            <button type="submit" class="btn">Publish Notice</button>
+                        </form>
+                    </div>
+
+                    <div class="dashboard_card">
+                        <h2>All Notices</h2>
+                        <div id="noticesList" class="notice_list">
+                            <!-- all notices will be rendered here -->
+                        </div>
+                    </div>
+                </div>
+                <!-- end of notice section -->
+
+                <!-- settings section -->
+                 <div id="settingsSection"  class="hiden">
+                    <div class="dashboard_card">
+                        <h2>School Settings</h2>
+                        <form action="" id="schoolSettings">
+                            <div class="form_group">
+                                <label for="inputSchoolName">Input School Name</label>
+                                <input type="text" id="inputSchoolName" required>
+                            </div>
+                            <div class="form_group">
+                                <label for="schoolSlogan">School Slogan</label>
+                                <input type="text" id="schoolSlogan" required>
+                            </div>
+                            <div class="form_group">
+                                <label for="logourl"> Logo URL</label>
+                                <input type="url" id="logourl" required>
+                            </div>
+                            <button type="submit" class="btn">Save Settings</button>
+                        </form>
+                    </div>
+                 </div>
+                 <!-- end of settings section -->
+          </div>
+
+      </div>
+
+      <script src="./script.js"></script>
+</body>
+</html>

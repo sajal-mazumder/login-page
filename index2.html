@@ -1,0 +1,110 @@
+<!-- 
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Driving License Generator</title>
+</head>
+<body>
+  <h2>Driving License Generator</h2>
+  <form id="licenseForm">
+    <label for="fullName">Full Name:</label>
+    <input type="text" id="fullName" required><br><br>
+
+    <label for="age">Age:</label>
+    <input type="number" id="age" required><br><br>
+
+    <label for="address">Address:</label>
+    <input type="text" id="address" required><br><br>
+
+    <button type="submit">Generate License</button>
+  </form>
+
+  <div id="result" style="margin-top: 20px;"></div>
+
+  <script>
+    document.getElementById("licenseForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const fullName = document.getElementById("fullName").value;
+      const age = parseInt(document.getElementById("age").value);
+      const address = document.getElementById("address").value;
+
+      if (age < 18) {
+        document.getElementById("result").innerHTML = 
+          `<p style="color: red;">Sorry, you must be at least 18 to apply for a driving license.</p>`;
+        return;
+      }
+
+      // Generate a mock license number
+      const licenseNumber = "DL-" + Math.floor(100000 + Math.random() * 900000);
+
+      const resultHtml = `
+        <h3>License Generated Successfully!</h3>
+        <p><strong>Name:</strong> ${fullName}</p>
+        <p><strong>Age:</strong> ${age}</p>
+        <p><strong>Address:</strong> ${address}</p>
+        <p><strong>License No:</strong> ${licenseNumber}</p>
+      `;
+
+      document.getElementById("result").innerHTML = resultHtml;
+    });
+  </script>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Driving License Eligibility Checker</title>
+</head>
+<body>
+  <h2>Driving License Checker</h2>
+  <form id="licenseForm">
+    <label for="fullName">Full Name:</label>
+    <input type="text" id="fullName" required><br><br>
+
+    <label for="age">Age:</label>
+    <input type="number" id="age" required><br><br>
+
+    <label for="address">Address:</label>
+    <input type="text" id="address" required><br><br>
+
+    <button type="submit">Check Eligibility</button>
+  </form>
+
+  <div id="result" style="margin-top: 20px;"></div>
+
+  <script>
+    document.getElementById("licenseForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const fullName = document.getElementById("fullName").value;
+      const age = parseInt(document.getElementById("age").value);
+      const address = document.getElementById("address").value;
+      let message = "";
+
+      if (age >= 0 && age <= 10) {
+        message = `<p style="color: red;">Sorry, ${fullName}. You are not eligible to drive.</p>`;
+      } else if (age > 10 && age < 18) {
+        message = `<p style="color: orange;">Hello ${fullName}, you are allowed to drive but not eligible to get a driving license.</p>`;
+      } else if (age >= 18 && age <= 60) {
+        const licenseNumber = "DL-" + Math.floor(100000 + Math.random() * 900000);
+        message = `
+          <h3 style="color: green;">License Generated Successfully!</h3>
+          <p><strong>Name:</strong> ${fullName}</p>
+          <p><strong>Age:</strong> ${age}</p>
+          <p><strong>Address:</strong> ${address}</p>
+          <p><strong>License No:</strong> ${licenseNumber}</p>
+        `;
+      } else if (age > 60) {
+        message = `<p style="color: red;">Sorry, ${fullName}. You are no longer eligible to drive or get a license.</p>`;
+      } else {
+        message = `<p style="color: red;">Invalid age entered.</p>`;
+      }
+
+      document.getElementById("result").innerHTML = message;
+    });
+  </script>
+</body>
+</html>
