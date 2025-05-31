@@ -69,6 +69,11 @@
                     <!-- all notices will be rendered here -->
                 </div>
              </div><br>
+
+             <!-- <div id="dashboardSection">
+                <h2>Welcome to School Management Dashboard</h2>
+                <p>Please select a section from the sidebar.</p>
+            </div> -->
              <!-- students section -->
               <div id="studentsSection"  class="hiden">
                 <div class="dashboard_card">
@@ -86,6 +91,9 @@
                             <th>Action</th>
                            </tr>
                         </thead>
+                         <tbody>
+                            <!-- Students will be inserted here by JavaScript -->
+                        </tbody>
                     </table>
                 </div>
               </div>
@@ -97,7 +105,11 @@
                     <h2>Admit New Student</h2>
                     <form action="" id="admitForm" class="form">
                         <div class="form_group">
-                            <label for="studentName"></label>
+                            <label for="studentName">Name</label>
+                            <input type="text" id="studentName" required>
+                            <label for="studentName">Class</label>
+                            <input type="text" id="studentName" required>
+                            <label for="studentName">Roll</label>
                             <input type="text" id="studentName" required>
                         </div>
                         <button type="submit" class="btn">Admit Student</button>
@@ -118,7 +130,7 @@
                             <div class="form_group">
                                 <!-- <label for="noticeContent">Notice Content</label> -->
                                 <!-- <input type="text" id="noticeContent" required> -->
-                                <textarea name="textarea" id="noticeContent"></textarea>
+                                <textarea name="textarea" id="noticeContent" placeholder="Notice Content" required></textarea>
                             </div>
                             <button type="submit" class="btn">Publish Notice</button>
                         </form>
@@ -148,7 +160,7 @@
                             </div>
                             <div class="form_group">
                                 <label for="logourl"> Logo URL</label>
-                                <input type="url" id="logourl" required>
+                                <input type="url" id="logoUrl" required>
                             </div>
                             <button type="submit" class="btn">Save Settings</button>
                         </form>
@@ -159,6 +171,7 @@
 
       </div>
 
-      <script src="./script.js"></script>
+      <!-- <script src="./script.js"></script> -->
+      <script src="./app.js"></script>
 </body>
 </html>

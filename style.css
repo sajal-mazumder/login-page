@@ -374,7 +374,7 @@ body{
 }
 
 #noticeContent{
-    height: 100px;
+    /* height: 100px; //no need this styles  */
 }
 
 .notice_item{
@@ -400,4 +400,22 @@ body{
 .notice_item h5{
     color: var(--primary_color);
     padding: 0 10px 5px;
+}
+
+
+.edit_btn {
+  background-color: orange;
+  color: white;
+  border: none;
+  padding: 4px 8px;
+  cursor: pointer;
+  margin-right: 4px;
+}
+
+.delete_btn {
+  background-color: crimson;
+  color: white;
+  border: none;
+  padding: 4px 8px;
+  cursor: pointer;
 }

@@ -1,20 +1,24 @@
 
 
-function showSection(params) {
+ function showSection(params) {
 
-   const elements = document.querySelectorAll(".main_content > div")
+    const elements = document.querySelectorAll(".main_content > div")
+    // console.log(elements);
+    
 
-   elements.forEach(data =>{
-      data.classList.add('hiden')
-   })
+    elements.forEach(data =>{
+       data.classList.add('hiden')
+    })
 
-   var w = document.getElementById(params + 'Section').classList.remove('hiden') 
+    var w = document.getElementById(params + 'Section').classList.remove('hiden')
+     
 }
 // showSection()
 // console.log(w);
 
 
-// 60 class
+
+// 60 class  school setting 
 
 
 const schoolName = document.getElementById("school_name");
@@ -42,9 +46,9 @@ window.onload = () =>{
         e.preventDefault()
         // console.log(e);
 
-        const inputSchoolName = document.getElementById("inputSchoolName").value;
-        const schoolSlogan = document.getElementById("schoolSlogan").value;
-        const logourl = document.getElementById("logourl").value;
+        const inputSchoolName = document.getElementById("inputSchoolName").value.trim();
+        const schoolSlogan = document.getElementById("schoolSlogan").value.trim();
+        const logourl = document.getElementById("logourl").value.trim();
         
         const setData = {
             schoolName: inputSchoolName,
@@ -93,7 +97,7 @@ noticeForm.addEventListener("submit", (e)=>{
     renderNotices()
 });
 
-function renderNotices(params) {
+function renderNotices() {
     const savedNotice = JSON.parse(localStorage.getItem("schoolNotices")) || [];
 
     // console.log(savedNotice);
